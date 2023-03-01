@@ -1,0 +1,10 @@
+#Programmatically query metadata from within a VM
+
+#To query instance custom metadata 
+curl "http://metadata.google.internal/computeMetadata/v1/instance/attributes/<key>?alt=json" -H "Metadata-Flavor: Google"
+
+#To retrieve the list of default metadata available to an instance
+curl "http://metadata.google.internal/computeMetadata/v1/instance/" -H "Metadata-Flavor: Google"
+
+#Example to retrieve the tags avaiable to an instance
+curl "http://metadata.google.internal/computeMetadata/v1/instance/tags?alt=json" -H "Metadata-Flavor: Google"
