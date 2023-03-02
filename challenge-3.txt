@@ -1,0 +1,8 @@
+#using grep
+input={"a":{"b":{"c":"d"}}}
+
+echo $input | grep -o '"a": "[^"]*' | grep -o '[^"]*$'
+
+#using JQ where challenge.sh value is {"a":{"b":{"c":"d"}}}
+
+jq -r '.a.b.c' challenge.sh
